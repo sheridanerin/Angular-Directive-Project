@@ -1,5 +1,14 @@
-var app = angular.module('directivePractice', []);
+angular.module('directivePractice', ['ui.router'])
+	.config(function($stateProvider, $urlRouterProvider){
 
-app.config(function(){
+	$stateProvider
+		.state('home', {
+			url: '/',
+			templateUrl: 'app/js/home/homeTmpl.html',
+			controller: 'homeCtrl'
+		});
+
+	$urlRouterProvider
+		.otherwise('/');
 
 });
